@@ -44,7 +44,7 @@ int main(int argc, char *argv[]){
             else{
             	printf(argv[1]); 
             	printf("\n");
-            	printf("我崩溃了！！~dIU&^!@E*d0QD");
+            	printf("我崩溃了！！~dIU&^!@E*d0QD\n");
 			}
         }
     }
