@@ -1,7 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
-#include <conio.h>
 int main(int argc, char *argv[]){
     if(argc != 3){
         printf("请输入正确的参数！如：wordCount.exe -c input.txt\n");
@@ -18,7 +17,7 @@ int main(int argc, char *argv[]){
             exit(0);
         }
         else{
-            if(argv[1] == "-c" || argv[1] == "-C"){
+            if(strcmp(argv[1], "-c")==0 || strcmp(argv[1], "-C")==0){
                 while((c = fgetc(fp)) != EOF){
                     count++;
                 }
@@ -27,7 +26,7 @@ int main(int argc, char *argv[]){
                 fclose(fp);
                 exit(0);
             }
-            else if(argv[1] == "-w" || argv[1] == "-W"){
+            else if(strcmp(argv[1], "-w")==0 || strcmp(argv[1], "-W")==0){//strcmp比较字符串，相等返回0.。==会比较地址。 
                 while((c = fgetc(fp)) != EOF){
                     if(c == ' '|| c == ',' || c == '.'){
                         word = 0;
@@ -44,7 +43,7 @@ int main(int argc, char *argv[]){
             else{
             	printf(argv[1]); 
             	printf("\n");
-            	printf("我崩溃了！！~dIU&^!@E*d0QD\n");
+            	printf("我崩溃了啊！！~dIU&^!@E*d0QD\n");
 			}
         }
     }
