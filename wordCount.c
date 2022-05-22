@@ -8,7 +8,7 @@ int main(int argc, char *argv[]){
     else{
         char c;
         int count = 0;
-        int word;
+        int word=0;
         FILE *fp;
         fp = fopen(argv[2],"r");
         if(fp == NULL){
@@ -28,14 +28,14 @@ int main(int argc, char *argv[]){
             }
             else if(strcmp(argv[1], "-w")==0 || strcmp(argv[1], "-W")==0){//strcmp比较字符串，相等返回0.。==会比较地址。 
                 while((c = fgetc(fp)) != EOF){
-                    if(c == ' '|| c == ',' || c == '.'){
+                    if(c == ' '|| c == ',' || c == '.' || c == '\n'){
                         word = 0;
                     }else if(word == 0){
                         word = 1;
                         count++;
                     }
                 }
-                printf("共有单词%d个\n",count+1);
+                printf("共有单词%d个\n",count);
                 count = 0;
                 fclose(fp);
                 exit(0);
